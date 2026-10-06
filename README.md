@@ -1,54 +1,54 @@
-# 💰 FinCalc Pro — Calculadora Financera d'Alt CPC per a Google AdSense
+# 💰 FinCalc Pro — Calculadora Financiera de Alto CPC para Google AdSense
 
-**FinCalc Pro** és una suite completa d'eines financeres interactives desenvolupada amb disseny ultra-modern (Tailwind CSS, Chart.js, Lucide Icons) pensada per aconseguir:
-1. **Alt temps de permanència a la pàgina (Dwell Time)**: Els usuaris passen entre 2 i 5 minuts ajustant xifres i consultant gràfics.
-2. **Nínxol de màxim CPC a Google Ads**: Les hipoteques, préstecs i finances personals tenen els costos per clic més alts del mercat publicitària (entre 2€ i més de 25€ per clic depenent del país).
-3. **Aprovació fàcil a Google AdSense**: Inclou pàgina de Privadesa RGPD, Avís Legal, banner de cookies, fitxer `ads.txt` i contingut educatiu exhaustiu per superar el filtre de "contingut de baix valor".
-
----
-
-## 🛠️ Eines incloses:
-1. **Simulador d'Hipoteques Avançat amb Amortització Anticipada**:
-   - Càlcul de quota mensual, TIN, despeses anuals (IBI, assegurances).
-   - Suport complet d'amortització anticipada: aportacions mensuals recurrents, anuals i extraordinàries puntuals.
-   - Estratègies d'amortització: **Reduir Termini** (màxim estalvi d'interessos) o **Reduir Quota**.
-   - Tauler dinàmic d'estadístiques d'estalvi amb comparativa de temps i diners guanyats.
-   - Gràfica de línies d'evolució de saldo restant estàndard vs accelerat.
-   - **Gràfica de barres comparativa d'estalvi d'interessos** (estil Bankrate).
-   - Taula completa d'amortització anual o mensual exportable a CSV amb codificació UTF-8.
-   - Suport d'impressió i exportació a PDF neta i certificada (`@media print`).
-2. **Calculadora d'Interès Compost**: Estimador de riquesa a llarg termini amb aportacions periòdiques i gràfica dinàmica de creixement exponencial.
-3. **Comparador de 2 Préstecs**: Algorisme de decisió directa per avaluar quina oferta bancària estalvia més comissions i interessos totals.
-4. **Calculadora d'Inflació**: Eina d'impacte sobre el poder adquisitiu real dels estalvis.
-5. **SEO & Structured Data Rich Snippets**: Schema.org JSON-LD complet (`WebApplication`, `FinancialProduct`, `FAQPage`) optimitzat per posicionar al rang #1 de Google.
+**FinCalc Pro** es una suite completa de herramientas financieras interactivas desarrollada con diseño ultramoderno (Tailwind CSS, Chart.js, Lucide Icons) pensada para lograr:
+1. **Alto tiempo de permanencia en página (Dwell Time)**: Los usuarios pasan entre 2 y 5 minutos ajustando cifras y consultando gráficos.
+2. **Nicho de máximo CPC en Google Ads**: Las hipotecas, préstamos y finanzas personales tienen los costes por clic más altos del mercado publicitario (entre 2 € y más de 25 € por clic según el país).
+3. **Aprobación fácil en Google AdSense**: Incluye página de Privacidad RGPD, Aviso Legal, banner de cookies, archivo `ads.txt` y contenido educativo exhaustivo para superar el filtro de "contenido de bajo valor".
 
 ---
 
-## 🚀 Com publicar la web gratuïtament a Internet (en 2 minuts)
-
-Perquè Google AdSense pugui aprovar la web, aquesta ha d'estar allotjada a Internet amb un enllaç públic. Tens aquestes opcions 100% gratuïtes:
-
-### Opció A: Vercel (Recomanada - La més ràpida)
-1. Ves a [vercel.com](https://vercel.com) i crea un compte gratuït (pots entrar amb el teu GitHub).
-2. Fes clic a **Add New... > Project**.
-3. Arrossega directament aquesta carpeta `fincalc-pro` o selecciona el repositori de GitHub.
-4. Fes clic a **Deploy**. En 15 segons tindràs una URL pública tipus `fincalc-pro.vercel.app`.
-
-### Opció B: GitHub Pages
-1. Puja aquesta carpeta a un nou repositori de GitHub (ex: `fincalc-pro`).
-2. Ves a **Settings > Pages**.
-3. A la secció "Branch", selecciona `main` i la carpeta `/ (root)`. Fes clic a **Save**.
-4. En 1 minut la teva web serà pública a `el-teu-usuari.github.io/fincalc-pro`.
+## 🛠️ Herramientas incluidas:
+1. **Simulador de Hipotecas Avanzado con Amortización Anticipada**:
+   - Cálculo de cuota mensual, TIN, gastos anuales (IBI, seguros).
+   - Soporte completo de amortización anticipada: aportaciones mensuales recurrentes, anuales y extraordinarias puntuales.
+   - Estrategias de amortización: **Reducir Plazo** (máximo ahorro de intereses) o **Reducir Cuota**.
+   - Panel dinámico de estadísticas de ahorro con comparativa de tiempo y dinero ganado.
+   - Gráfico de líneas de evolución de saldo restante estándar vs. acelerado.
+   - **Gráfico de barras comparativo de ahorro de intereses** (estilo Bankrate).
+   - Tabla completa de amortización anual o mensual exportable a CSV con codificación UTF-8.
+   - Soporte de impresión y exportación a PDF limpia y certificada (`@media print`).
+2. **Calculadora de Interés Compuesto**: Estimador de patrimonio a largo plazo con aportaciones periódicas y gráfico dinámico de crecimiento exponencial.
+3. **Comparador de 2 Préstamos**: Algoritmo de decisión directa para evaluar qué oferta bancaria ahorra más comisiones e intereses totales.
+4. **Calculadora de Inflación**: Herramienta de impacto sobre el poder adquisitivo real de los ahorros.
+5. **SEO & Structured Data Rich Snippets**: Schema.org JSON-LD completo (`WebApplication`, `FinancialProduct`, `FAQPage`) optimizado para posicionar en el puesto #1 de Google.
 
 ---
 
-## 💵 Com connectar el teu compte de Google AdSense
+## 🚀 Cómo publicar la web gratis en Internet (en 2 minutos)
 
-Un cop la web estigui penjada a Internet:
-1. Entra al teu tauler de [Google AdSense](https://adsense.google.com).
-2. Ves a **Llocs web (Sites)** > fes clic a **Afegeix un lloc web (Add Site)**.
-3. Introdueix la teva URL (idealment amb domini propi si en compres un barat, com `.com` o `.es`, o la URL pública).
-4. Google et donarà el teu codi de client (ex: `ca-pub-1234567890123456`).
-5. Obre l'arxiu [index.html](file:///C:/Users/Usuari/Documents/GitHub/fincalc-pro/index.html), cerca `ca-pub-XXXXXXXXXXXXXXXX` i posa-hi el teu número d'AdSense.
-6. Obre l'arxiu [ads.txt](file:///C:/Users/Usuari/Documents/GitHub/fincalc-pro/ads.txt) i substitueix també `pub-XXXXXXXXXXXXXXXX` pel teu número.
-7. Al tauler d'AdSense, clica a **Demanar revisió**. Google verificarà el lloc en 24h - 48h i començaran a sortir els anuncis reals generant ingressos automàtics per cada visita i clic.
+Para que Google AdSense pueda aprobar la web, esta debe estar alojada en Internet con un enlace público. Tienes estas opciones 100% gratuitas:
+
+### Opción A: Vercel (Recomendada - La más rápida)
+1. Ve a [vercel.com](https://vercel.com) y crea una cuenta gratuita (puedes iniciar sesión con tu cuenta de GitHub).
+2. Haz clic en **Add New... > Project**.
+3. Arrastra directamente esta carpeta `fincalc-pro` o selecciona el repositorio de GitHub.
+4. Haz clic en **Deploy**. En 15 segundos tendrás una URL pública tipo `fincalc-pro.vercel.app`.
+
+### Opción B: GitHub Pages
+1. Sube esta carpeta a un nuevo repositorio de GitHub (ej: `fincalc-pro`).
+2. Ve a **Settings > Pages**.
+3. En la sección "Branch", selecciona `main` y la carpeta `/ (root)`. Haz clic en **Save**.
+4. En 1 minuto tu web estará pública en `tu-usuario.github.io/fincalc-pro`.
+
+---
+
+## 💵 Cómo conectar tu cuenta de Google AdSense
+
+Una vez que la web esté publicada en Internet:
+1. Entra a tu panel de [Google AdSense](https://adsense.google.com).
+2. Ve a **Sitios web (Sites)** > haz clic en **Añadir sitio web (Add Site)**.
+3. Introduce tu URL (idealmente con dominio propio si compras uno económico, como `.com` o `.es`, o la URL pública).
+4. Google te proporcionará tu código de cliente (ej: `ca-pub-1234567890123456`).
+5. Abre el archivo [index.html](file:///C:/Users/Usuari/Documents/GitHub/fincalc-pro/index.html), busca `ca-pub-XXXXXXXXXXXXXXXX` y coloca tu número de AdSense.
+6. Abre el archivo [ads.txt](file:///C:/Users/Usuari/Documents/GitHub/fincalc-pro/ads.txt) y sustituye también `pub-XXXXXXXXXXXXXXXX` por tu número.
+7. En el panel de AdSense, haz clic en **Solicitar revisión**. Google verificará el sitio en 24h - 48h y comenzarán a mostrarse los anuncios reales generando ingresos automáticos por cada visita y clic.
