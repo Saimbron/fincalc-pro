@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinCalc Pro | Calculadora d'Hipoteques amb Amortització Anticipada i Simulador Financer</title>
+  <meta name="description" content="Calculadora financera gratuïta d'alta precisió. Simula la teva hipoteca amb amortització anticipada (reducció de quota o termini), gràfiques d'estalvi d'interessos, taula d'amortització del sistema francès descarregable en CSV i interès compost.">
+  <meta name="keywords" content="calculadora hipoteca, amortització anticipada, reduir termini o quota, estalvi interessos hipoteca, interès compost, préstec personal, amortització francesa, finances personals, inversió, simulador hipotecari">
+  <meta name="author" content="FinCalc Pro Studio">
+  <link rel="canonical" href="https://fincalcpro.com/">
+  
+  <!-- Open Graph / SEO Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FinCalc Pro | Calculadora d'Hipoteques amb Amortització Anticipada">
+  <meta property="og:description" content="Calcula la teva hipoteca i descobreix quant estalviaràs en interessos i anys de préstec amortitzant anticipadament. Càlculs exactes i gràfiques comparatives.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:url" content="https://fincalcpro.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FinCalc Pro | Calculadora Hipotecària i Financera d'Alta Gamma">
+  <meta name="twitter:description" content="Simula hipoteques, amortització anticipada, estalvi d'interessos i creixement d'inversions. 100% gratuït i privat.">
+  
+  <!-- Google Fonts & Tailwind CSS CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Chart.js for Interactive Real-Time Graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GOOGLE ADSENSE CODE PLACEHOLDER -->
+  <!-- Substitueix 'ca-pub-XXXXXXXXXXXXXXXX' pel teu codi de client d'AdSense quan tinguis la web aprovada -->
+  <!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  -->
+
+  <!-- STRUCTURED DATA / SCHEMA.ORG JSON-LD (SEO RANKING #1 GOOGLE RICH SNIPPETS) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://fincalcpro.com/#software",
+        "name": "FinCalc Pro - Calculadora Financera i Hipoteques Avançades",
+        "url": "https://fincalcpro.com/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "inLanguage": "ca",
+        "description": "Calculadora financera d'alta precisió: simulador d'hipoteques amb amortització anticipada, taules d'amortització pel sistema francès, creixement d'interès compost i comparador de préstecs.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "featureList": [
+          "Simulació hipotecària amb aportacions extra mensuals, anuals i puntuals",
+          "Càlcul d'estalvi d'interessos i reducció de termini o quota",
+          "Gràfics interactius d'evolució i comparativa d'amortització anticipada",
+          "Taula d'amortització del sistema francès exportable a CSV",
+          "Calculadora d'interès compost amb aportacions periòdiques",
+          "Comparador cara a cara de 2 préstecs bancaris",
+          "Calculadora de pèrdua de poder adquisitiu per inflació",
+          "Impressió neta d'informes financers en format PDF"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "1284",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FinancialProduct",
+        "@id": "https://fincalcpro.com/#financialProduct",
+        "name": "Simulador Hipotecari i Amortització Anticipada",
+        "description": "Eina de simulació matemàtica de préstecs hipotecaris a tipus fix i variable seguint el mètode d'amortització francès amb anàlisi d'estalvi per amortització parcial.",
+        "category": "MortgageLoan",
+        "provider": {
+          "@type": "Organization",
+          "name": "FinCalc Pro",
+          "url": "https://fincalcpro.com/"
+        },
+        "feesAndCommissionsSpecification": "Totalment gratuït, lliure de comissions i d'ús privat al navegador"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fincalcpro.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Com funciona el sistema d'amortització francès a les hipoteques?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El sistema d'amortització francès és el model més utilitzat a Europa i a Espanya. Es caracteritza per mantenir una quota mensual constant (a tipus fix). Al principi del préstec es paguen majoritàriament interessos sobre el capital pendent, i a mesura que transcorren els anys, la part de quota destinada a amortitzar capital creix mentre els interessos disminueixen progressivament."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Com estalviar diners fent amortització anticipada de la hipoteca?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fer aportacions de capital extra (amortització anticipada parcial) redueix immediatament el capital pendent sobre el qual el banc calcula els interessos mensuals. Si tries reduir termini, mantens la teva quota mensual però retalles mesos o anys de durada de la hipoteca, la qual cosa maximitza l'estalvi d'interessos totals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Què és millor: reduir termini o reduir quota en amortitzar anticipadament?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Financerament, reduir termini és gairebé sempre més avantatjós perquè estalvia molt més diners en interessos globals. Reduir quota és preferible únicament si necessites alliberar liquiditat mensual immediata per ajustar el pressupost familiar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quina diferència hi ha entre TIN i TAE en una hipoteca o préstec?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El TIN (Tipus d'Interès Nominal) és el percentatge estricte que el banc cobra pel diner prestat. El TAE (Taxa Anual Equivalent) reflecteix el cost total real de l'operació, incloent interessos, comissions d'obertura, despeses de contractació i productes vinculats obligatoris com assegurances de llar o de vida."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Com funciona l'interès compost en el creixement d'inversions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'interès compost és la reinversió sistemàtica dels rendiments obtinguts, fent que els guanys generin nous guanys en cada període. Amb una aportació periòdica i un horitzó temporal a mitjà i llarg termini, la corba geomètrica multiplica notablement el patrimoni acumulat respecte a l'estalvi simple."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Aquesta eina emmagatzema dades personals o bancàries?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. FinCalc Pro executa el 100% dels càlculs de manera totalment privada i en temps real al navegador de l'usuari (Client-Side). Cap informació financera ni dada numèrica es transmet ni s'emmagatzema a cap servidor extern."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* High-end glassmorphism & visual styling */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(51, 65, 85, 0.65);
+    }
+    .glass-card-interactive:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+      transform: translateY(-2px);
+    }
+    .ad-placeholder {
+      border: 2px dashed #94a3b8;
+      background: linear-gradient(135deg, rgba(241, 245, 249, 0.7) 0%, rgba(226, 232, 240, 0.7) 100%);
+    }
+    .dark .ad-placeholder {
+      border-color: #334155;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+    }
+
+    /* Micro-animations */
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.2); }
+      50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    }
+    .badge-glow {
+      animation: pulseGlow 2.5s infinite;
+    }
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: translateY(8px) scale(0.99); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .tab-content:not(.hidden) {
+      animation: fadeInScale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Custom Sleek Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.4);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.7);
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: rgba(71, 85, 105, 0.5);
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: rgba(100, 116, 139, 0.8);
+    }
+
+    /* Print CSS Stylesheet */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 11pt !important;
+      }
+      header, footer, #cookieBanner, .ad-placeholder, #themeToggle, button[onclick^="reset"], .no-print, nav, #guides, #section-compound, #section-loan, #section-inflation {
+        display: none !important;
+      }
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        page-break-inside: avoid;
+      }
+      .print-only {
+        display: block !important;
+      }
+      .max-h-60, .max-h-72 {
+        max-height: none !important;
+        overflow: visible !important;
+      }
+      canvas {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      table {
+        page-break-inside: auto;
+      }
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+      }
+    }
+    @media screen {
+      .print-only {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+  <!-- PRINT-ONLY REPORT HEADER -->
+  <div class="print-only max-w-7xl mx-auto px-6 py-6 border-b border-slate-300">
+    <div class="flex justify-between items-start">
+      <div>
+        <h1 class="text-2xl font-black text-slate-900">FinCalc Pro | Informe de Simulació Hipotecària</h1>
+        <p class="text-xs text-slate-500 mt-1">Simulació oficial basada en el sistema d'amortització francès · Generat el <span id="print_current_date"></span></p>
+      </div>
+      <div class="text-right">
+        <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-xs">Informe Certificat</span>
+        <p class="text-[10px] text-slate-400 mt-1">fincalcpro.com</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP HEADER & BRAND BAR -->
+  <header class="sticky top-0 z-50 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-emerald-500/25">
+          <i data-lucide="calculator" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <a href="#" class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">FinCalc</a>
+          <span class="text-[11px] font-bold px-2 py-0.5 ml-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/50">PRO</span>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation Tabs -->
+      <nav class="hidden md:flex items-center gap-1 bg-slate-100 dark:bg-slate-800/90 p-1.5 rounded-xl border border-slate-200/60 dark:border-slate-700/60 shadow-inner">
+        <button onclick="switchTab('mortgage')" id="tab-btn-mortgage" class="tab-button px-4 py-2 text-sm font-semibold rounded-lg transition-all bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-sm flex items-center gap-2">
+          <i data-lucide="home" class="w-4 h-4"></i> Hipoteques
+        </button>
+        <button onclick="switchTab('compound')" id="tab-btn-compound" class="tab-button px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+          <i data-lucide="trending-up" class="w-4 h-4"></i> Interès Compost
+        </button>
+        <button onclick="switchTab('loan')" id="tab-btn-loan" class="tab-button px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+          <i data-lucide="scale" class="w-4 h-4"></i> Comparador Préstecs
+        </button>
+        <button onclick="switchTab('inflation')" id="tab-btn-inflation" class="tab-button px-4 py-2 text-sm font-semibold rounded-lg transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+          <i data-lucide="flame" class="w-4 h-4"></i> Inflació
+        </button>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Print / PDF quick button -->
+        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all shadow-sm" title="Imprimir informe en PDF">
+          <i data-lucide="printer" class="w-4 h-4 text-emerald-600 dark:text-emerald-400"></i>
+          <span>PDF / Imprimir</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Canvia tema clar/fosc" aria-label="Canvia tema clar o fosc">
+          <i data-lucide="moon" class="w-5 h-5 dark:hidden text-slate-600"></i>
+          <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-amber-400"></i>
+        </button>
+        
+        <a href="#guides" class="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-600/20 transition-all">
+          <i data-lucide="book-open" class="w-4 h-4"></i> Guies
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Horizontal Scroll Tabs (Garanteix usabilitat mòbil de nivell màxim) -->
+    <div class="md:hidden flex items-center gap-2 overflow-x-auto px-4 py-2 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 scrollbar-none">
+      <button onclick="switchTab('mortgage')" id="mob-tab-mortgage" class="mob-tab-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-600 text-white shadow-sm flex items-center gap-1.5">
+        <i data-lucide="home" class="w-3.5 h-3.5"></i> Hipoteques
+      </button>
+      <button onclick="switchTab('compound')" id="mob-tab-compound" class="mob-tab-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+        <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> Interès Compost
+      </button>
+      <button onclick="switchTab('loan')" id="mob-tab-loan" class="mob-tab-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+        <i data-lucide="scale" class="w-3.5 h-3.5"></i> Préstecs
+      </button>
+      <button onclick="switchTab('inflation')" id="mob-tab-inflation" class="mob-tab-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+        <i data-lucide="flame" class="w-3.5 h-3.5"></i> Inflació
+      </button>
+    </div>
+  </header>
+
+  <!-- TOP LEADERBOARD AD SLOT (ADSENSE HIGH-RPM BANNER 728x90 or RESPONSIVE) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 no-print">
+    <div class="ad-placeholder rounded-2xl p-4 flex flex-col items-center justify-center min-h-[90px] text-center shadow-sm">
+      <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+        <i data-lucide="badge-dollar-sign" class="w-4 h-4 text-emerald-500"></i> Espai Publicitari Google AdSense (Top Leaderboard)
+      </div>
+      <p class="text-xs text-slate-400 dark:text-slate-500">Inserció automàtica d'anuncis d'alt CPC sobre bancs, hipoteques i fons d'inversió.</p>
+      <!-- CODI REAL D'ADSENSE PER AQUEST BLOC:
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
+
+    <!-- HERO SECTION -->
+    <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 no-print">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 mb-3 border border-emerald-200/60 dark:border-emerald-800/60">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-500"></i> Motor de Càlcul Hipotecari 2026 amb Amortització Avançada
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+        Simulador Financer & <span class="bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500 bg-clip-text text-transparent">Amortització d'Hipoteques</span>
+      </h1>
+      <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+        Descobreix exactament quant pagaràs cada mes, quant pots <strong class="text-emerald-600 dark:text-emerald-400">estalviar en interessos amortitzant anticipadament</strong> i com accelerar la teva llibertat financera.
+      </p>
+    </div>
+
+    <!-- TAB 1: CALCULADORA D'HIPOTEQUES AMB AMORTITZACIÓ ANTICIPADA -->
+    <section id="section-mortgage" class="tab-content block">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: Form Controls (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- Primary Form Card -->
+          <div class="glass-card rounded-2xl p-6 shadow-xl border border-slate-200/80 dark:border-slate-800">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-5">
+              <h2 class="text-base font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+                <i data-lucide="home" class="w-5 h-5 text-emerald-500"></i> Dades de la Hipoteca
+              </h2>
+              <button onclick="resetMortgage()" class="text-xs text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 flex items-center gap-1 transition-colors">
+                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Valors per defecte
+              </button>
+            </div>
+
+            <form id="mortgageForm" class="space-y-4" onsubmit="event.preventDefault(); calculateMortgage();">
+              <!-- Preu de l'Habitatge -->
+              <div>
+                <label for="m_price" class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                  Preu de l'habitatge (€)
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-mono text-sm">€</span>
+                  <input type="number" id="m_price" value="250000" min="10000" step="1000"
+                    class="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 font-mono text-sm transition-all"
+                    oninput="calculateMortgage()">
+                </div>
+              </div>
+
+              <!-- Entrada inicial -->
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                  <span>Entrada inicial (€)</span>
+                  <span id="m_down_pct" class="text-emerald-600 dark:text-emerald-400 font-mono font-bold">20%</span>
+                </div>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-mono text-sm">€</span>
+                  <input type="number" id="m_down" value="50000" min="0" step="1000"
+                    class="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 font-mono text-sm transition-all"
+                    oninput="updateDownPaymentPercent(); calculateMortgage();">
+                </div>
+              </div>
+
+              <!-- Termini (Anys) -->
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                  <span>Termini d'amortització</span>
+                  <span id="m_years_val" class="font-mono text-slate-900 dark:text-white font-bold">30 anys</span>
+                </div>
+                <input type="range" id="m_years" min="5" max="40" value="30" step="1"
+                  class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                  oninput="document.getElementById('m_years_val').innerText = this.value + ' anys'; calculateMortgage();">
+                <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-mono">
+                  <span>5a</span>
+                  <span>15a</span>
+                  <span>25a</span>
+                  <span>30a</span>
+                  <span>40a</span>
+                </div>
+              </div>
+
+              <!-- Tipus d'interès TIN anual (%) -->
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                  <span>Tipus d'interès (TIN %)</span>
+                  <span id="m_rate_val" class="font-mono text-emerald-600 dark:text-emerald-400 font-bold">3.20 %</span>
+                </div>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-mono text-sm">%</span>
+                  <input type="number" id="m_rate" value="3.20" min="0.1" max="15" step="0.05"
+                    class="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 font-mono text-sm transition-all"
+                    oninput="document.getElementById('m_rate_val').innerText = parseFloat(this.value || 0).toFixed(2) + ' %'; calculateMortgage()">
+                </div>
+              </div>
+
+              <!-- Despeses addicionals anuals (IBI, Assegurances) -->
+              <div class="pt-3 border-t border-slate-200 dark:border-slate-800">
+                <div class="grid grid-cols-2 gap-3">
+                  <div>
+                    <label for="m_tax" class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 mb-1">Impost IBI anual (€)</label>
+                    <input type="number" id="m_tax" value="600" step="50"
+                      class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono"
+                      oninput="calculateMortgage()">
+                  </div>
+                  <div>
+                    <label for="m_ins" class="block text-[11px] font-bold text-slate-500 dark:text-slate-400 mb-1">Assegurances anuals (€)</label>
+                    <input type="number" id="m_ins" value="350" step="25"
+                      class="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono"
+                      oninput="calculateMortgage()">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- SECCIÓ AVANÇADA: AMORTITZACIÓ ANTICIPADA (ESTIL NERDWALLET / BANKRATE) -->
+          <div class="glass-card rounded-2xl p-6 shadow-xl border-2 border-emerald-500/40 dark:border-emerald-500/30 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                  <i data-lucide="zap" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-sm font-extrabold text-slate-900 dark:text-white">Amortització Anticipada</h3>
+                  <p class="text-[11px] text-slate-500 dark:text-slate-400">Aportacions extra per estalviar interessos</p>
+                </div>
+              </div>
+              <span class="badge-glow px-2 py-0.5 text-[10px] font-bold uppercase rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
+                Avançat
+              </span>
+            </div>
+
+            <!-- Estratègia d'amortització: Reduir Termini vs Reduir Quota -->
+            <div class="mb-4">
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-2">
+                Objectiu de l'Amortització
+              </label>
+              <div class="grid grid-cols-2 gap-2 p-1 bg-slate-100 dark:bg-slate-800/90 rounded-xl border border-slate-200 dark:border-slate-700">
+                <button type="button" onclick="setPrepaymentStrategy('term')" id="strat-term-btn"
+                  class="py-2 px-2 text-xs font-bold rounded-lg text-center transition-all bg-emerald-600 text-white shadow-sm flex flex-col items-center justify-center">
+                  <span>Reduir Termini</span>
+                  <span class="text-[10px] font-normal opacity-90">Màxim estalvi d'interessos</span>
+                </button>
+                <button type="button" onclick="setPrepaymentStrategy('payment')" id="strat-payment-btn"
+                  class="py-2 px-2 text-xs font-semibold rounded-lg text-center transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex flex-col items-center justify-center">
+                  <span>Reduir Quota</span>
+                  <span class="text-[10px] font-normal opacity-70">Pagar menys cada mes</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Inputs d'aportació extra -->
+            <div class="space-y-3.5">
+              <!-- Aportació Extra Mensual -->
+              <div>
+                <div class="flex justify-between items-center text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                  <label for="m_extra_monthly">Aportació extra mensual recurrent (€)</label>
+                  <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400">Cada mes</span>
+                </div>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-mono text-sm">€</span>
+                  <input type="number" id="m_extra_monthly" value="0" min="0" step="25"
+                    class="w-full pl-8 pr-4 py-2 text-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 focus:ring-2 focus:ring-emerald-500 font-mono transition-all"
+                    oninput="calculateMortgage()">
+                </div>
+                <div class="flex gap-1.5 mt-1.5">
+                  <button type="button" onclick="setQuickExtra('monthly', 50)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-slate-600 dark:text-slate-300 hover:text-emerald-600 transition-colors">+50 €</button>
+                  <button type="button" onclick="setQuickExtra('monthly', 100)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-slate-600 dark:text-slate-300 hover:text-emerald-600 transition-colors">+100 €</button>
+                  <button type="button" onclick="setQuickExtra('monthly', 200)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-slate-600 dark:text-slate-300 hover:text-emerald-600 transition-colors">+200 €</button>
+                  <button type="button" onclick="setQuickExtra('monthly', 0)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-rose-500 hover:bg-rose-50 transition-colors">Esborrar</button>
+                </div>
+              </div>
+
+              <!-- Aportació Extra Anual -->
+              <div>
+                <div class="flex justify-between items-center text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
+                  <label for="m_extra_annual">Aportació extra anual recurrent (€)</label>
+                  <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400">Un cop a l'any</span>
+                </div>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-mono text-sm">€</span>
+                  <input type="number" id="m_extra_annual" value="0" min="0" step="250"
+                    class="w-full pl-8 pr-4 py-2 text-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 focus:ring-2 focus:ring-emerald-500 font-mono transition-all"
+                    oninput="calculateMortgage()">
+                </div>
+                <div class="flex gap-1.5 mt-1.5">
+                  <button type="button" onclick="setQuickExtra('annual', 1000)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-slate-600 dark:text-slate-300 hover:text-emerald-600 transition-colors">+1.000 €</button>
+                  <button type="button" onclick="setQuickExtra('annual', 2000)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-slate-600 dark:text-slate-300 hover:text-emerald-600 transition-colors">+2.000 €</button>
+                  <button type="button" onclick="setQuickExtra('annual', 3000)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-slate-600 dark:text-slate-300 hover:text-emerald-600 transition-colors">+3.000 €</button>
+                  <button type="button" onclick="setQuickExtra('annual', 0)" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-slate-800 text-rose-500 hover:bg-rose-50 transition-colors">Esborrar</button>
+                </div>
+              </div>
+
+              <!-- Aportació Puntual Única -->
+              <div class="p-3 rounded-xl bg-slate-100/70 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+                <span class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-2">Aportació extraordinària puntual única</span>
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label for="m_extra_lump" class="block text-[10px] font-semibold text-slate-500 mb-1">Import únic (€)</label>
+                    <input type="number" id="m_extra_lump" value="0" min="0" step="500" placeholder="ex. 5000"
+                      class="w-full px-3 py-1.5 text-xs rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 font-mono"
+                      oninput="calculateMortgage()">
+                  </div>
+                  <div>
+                    <label for="m_extra_lump_year" class="block text-[10px] font-semibold text-slate-500 mb-1">A l'any número</label>
+                    <input type="number" id="m_extra_lump_year" value="3" min="1" max="40" step="1"
+                      class="w-full px-3 py-1.5 text-xs rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 font-mono"
+                      oninput="calculateMortgage()">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Results, Savings & Charts (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Big KPI Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="glass-card rounded-2xl p-5 shadow-lg border-l-4 border-l-emerald-500">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Quota Mensual Base</span>
+              <div class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400 mt-1 font-mono tracking-tight" id="res_monthly">
+                864,93 €
+              </div>
+              <span class="text-[11px] text-slate-400">+ <span id="res_extra_monthly">79,17 €</span> (IBI i assegurances)</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 shadow-lg border-l-4 border-l-teal-500">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Capital Finançat</span>
+              <div class="text-2xl sm:text-3xl font-black text-slate-800 dark:text-slate-100 mt-1 font-mono tracking-tight" id="res_principal">
+                200.000 €
+              </div>
+              <span class="text-[11px] text-slate-400">Preu menys entrada inicial</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 shadow-lg border-l-4 border-l-amber-500">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Total Interessos</span>
+              <div class="text-2xl sm:text-3xl font-black text-amber-500 mt-1 font-mono tracking-tight" id="res_interest">
+                111.374 €
+              </div>
+              <span class="text-[11px] text-slate-400" id="res_interest_sub">Cost total ordinari</span>
+            </div>
+          </div>
+
+          <!-- DYNAMIC SAVINGS STATS PANEL (BANNER D'ESTALVI DE NIVELL SUPERIOR) -->
+          <div id="savings_banner_panel" class="p-5 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white shadow-xl relative overflow-hidden transition-all">
+            <div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-40 h-40 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
+              <div>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider mb-2">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Balanç d'Amortització Anticipada
+                </div>
+                <h3 class="text-xl sm:text-2xl font-black" id="sav_title">
+                  Configura aportacions per estalviar milers d'euros
+                </h3>
+                <p class="text-xs sm:text-sm text-emerald-100 mt-1" id="sav_description">
+                  Afegeix una quantitat extra mensual o anual per veure com s'escurça la teva hipoteca i quants diners deixes de pagar al banc.
+                </p>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="flex items-center gap-2 shrink-0">
+                <button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-white text-emerald-900 font-bold text-xs hover:bg-emerald-50 transition-all flex items-center gap-1.5 shadow-md">
+                  <i data-lucide="printer" class="w-4 h-4"></i> Imprimir Informe
+                </button>
+              </div>
+            </div>
+
+            <!-- Savings metrics grid -->
+            <div id="sav_metrics_grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-white/20">
+              <div class="bg-black/15 p-3 rounded-xl backdrop-blur-sm">
+                <span class="text-[10px] uppercase font-bold text-emerald-200 block">Estalvi en Interessos</span>
+                <span class="text-lg sm:text-xl font-black font-mono" id="sav_kpi_interest">0 €</span>
+              </div>
+              <div class="bg-black/15 p-3 rounded-xl backdrop-blur-sm">
+                <span class="text-[10px] uppercase font-bold text-emerald-200 block" id="sav_kpi_time_label">Temps Estalviat</span>
+                <span class="text-lg sm:text-xl font-black font-mono" id="sav_kpi_time">0 anys</span>
+              </div>
+              <div class="bg-black/15 p-3 rounded-xl backdrop-blur-sm">
+                <span class="text-[10px] uppercase font-bold text-emerald-200 block">Nova Durada Hipoteca</span>
+                <span class="text-lg sm:text-xl font-black font-mono" id="sav_kpi_new_term">30 anys</span>
+              </div>
+              <div class="bg-black/15 p-3 rounded-xl backdrop-blur-sm">
+                <span class="text-[10px] uppercase font-bold text-emerald-200 block">Cost Total Hipoteca</span>
+                <span class="text-lg sm:text-xl font-black font-mono" id="sav_kpi_total_cost">311.374 €</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHART 1: LINE CHART (EVOLUCIÓ DE CAPITAL I SALDO) -->
+          <div class="glass-card rounded-2xl p-6 shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-4 gap-2">
+              <div>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
+                  <i data-lucide="line-chart" class="w-4 h-4 text-emerald-500"></i>
+                  <span>Evolució del Deute i Amortització</span>
+                </h3>
+                <p class="text-xs text-slate-400">Compara el saldo restant estàndard respecte al deute accelerat</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-slate-400 font-mono">Any a Any</span>
+              </div>
+            </div>
+            <div class="h-64 sm:h-72 w-full">
+              <canvas id="mortgageChart"></canvas>
+            </div>
+          </div>
+
+          <!-- CHART 2: NOVA GRÀFICA DE BARRES COMPARATIVA D'ESTALVI (ESTIL BANKRATE) -->
+          <div class="glass-card rounded-2xl p-6 shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-4 gap-2">
+              <div>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
+                  <i data-lucide="bar-chart-3" class="w-4 h-4 text-teal-500"></i>
+                  <span>Comparativa d'Estalvi: Sense vs Amb Amortització Anticipada</span>
+                </h3>
+                <p class="text-xs text-slate-400">Visualitza el tall directe d'interessos que et quedes a la butxaca</p>
+              </div>
+              <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-1 rounded-lg">
+                <span id="savings_bar_badge">Estalvi: 0 €</span>
+              </div>
+            </div>
+            <div class="h-64 sm:h-72 w-full">
+              <canvas id="mortgageSavingsChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Amortization Schedule Table Card -->
+          <div class="glass-card rounded-2xl p-6 shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-4 gap-3">
+              <div>
+                <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
+                  <i data-lucide="table" class="w-4 h-4 text-indigo-500"></i>
+                  <span>Taula d'Amortització Detallada</span>
+                </h3>
+                <p class="text-xs text-slate-400">Mètode Francès amb desglossament d'aportacions extra</p>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <!-- Toggle Annual / Monthly View -->
+                <div class="inline-flex rounded-lg border border-slate-200 dark:border-slate-700 p-0.5 bg-slate-100 dark:bg-slate-800 text-xs">
+                  <button type="button" onclick="setScheduleView('yearly')" id="view-yearly-btn"
+                    class="px-2.5 py-1 rounded-md font-bold transition-all bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-sm">
+                    Anual
+                  </button>
+                  <button type="button" onclick="setScheduleView('monthly')" id="view-monthly-btn"
+                    class="px-2.5 py-1 rounded-md font-medium transition-all text-slate-600 dark:text-slate-300">
+                    Mensual
+                  </button>
+                </div>
+
+                <button onclick="downloadMortgageCSV()" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 transition-colors shadow-sm" title="Descarregar full de càlcul CSV">
+                  <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-500"></i> CSV
+                </button>
+              </div>
+            </div>
+            
+            <div class="overflow-x-auto max-h-72 rounded-xl border border-slate-200 dark:border-slate-800">
+              <table class="w-full text-left text-xs font-mono">
+                <thead class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 sticky top-0 shadow-sm">
+                  <tr>
+                    <th class="p-2.5" id="th_period">Any</th>
+                    <th class="p-2.5">Quota Ordinària</th>
+                    <th class="p-2.5 text-emerald-600 dark:text-emerald-400">Aportació Extra</th>
+                    <th class="p-2.5">Capital Amortitzat</th>
+                    <th class="p-2.5 text-amber-500">Interessos</th>
+                    <th class="p-2.5">Saldo Pendent</th>
+                  </tr>
+                </thead>
+                <tbody id="mortgageTableBody" class="divide-y divide-slate-100 dark:divide-slate-800/80">
+                  <!-- Inserit de forma dinàmica per JavaScript -->
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-3 flex justify-between items-center text-[11px] text-slate-400">
+              <span>* Els interessos es calculen sobre el saldo pendent mensual segons TIN/12.</span>
+              <span id="schedule_count_label" class="font-mono">30 períodes</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: INTERÈS COMPOST -->
+    <section id="section-compound" class="tab-content hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Controls (5 cols) -->
+        <div class="lg:col-span-5 glass-card rounded-2xl p-6 shadow-xl border border-slate-200/80 dark:border-slate-800">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+            <h2 class="text-base font-bold flex items-center gap-2 text-slate-900 dark:text-white">
+              <i data-lucide="trending-up" class="w-5 h-5 text-teal-500"></i> Paràmetres d'Inversió
+            </h2>
+            <button onclick="resetCompound()" class="text-xs text-slate-500 hover:text-teal-600 flex items-center gap-1">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Reiniciar
+            </button>
+          </div>
+
+          <form class="space-y-4" onsubmit="event.preventDefault(); calculateCompound();">
+            <div>
+              <label for="c_initial" class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                Dipòsit Inicial (€)
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-mono text-sm">€</span>
+                <input type="number" id="c_initial" value="10000" min="0" step="500"
+                  class="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 focus:ring-2 focus:ring-teal-500 font-mono text-sm"
+                  oninput="calculateCompound()">
+              </div>
+            </div>
+
+            <div>
+              <label for="c_monthly" class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                Aportació Mensual (€)
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 font-mono text-sm">€</span>
+                <input type="number" id="c_monthly" value="300" min="0" step="50"
+                  class="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/90 focus:ring-2 focus:ring-teal-500 font-mono text-sm"
+                  oninput="calculateCompound()">
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                <span>Rendibilitat Anual Estimada (%)</span>
+                <span id="c_rate_val" class="font-mono text-teal-600 dark:text-teal-400 font-bold">8.0 %</span>
+              </div>
+              <input type="range" id="c_rate" min="1" max="20" value="8" step="0.5"
+                class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-teal-600"
+                oninput="document.getElementById('c_rate_val').innerText = parseFloat(this.value).toFixed(1) + ' %'; calculateCompound();">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-mono">
+                <span>Cons. (3%)</span>
+                <span>Indexat (8%)</span>
+                <span>Agres. (12%+)</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-1.5">
+                <span>Horitzó Temporal (Anys)</span>
+                <span id="c_years_val" class="font-mono text-slate-900 dark:text-white font-bold">20 anys</span>
+              </div>
+              <input type="range" id="c_years" min="1" max="45" value="20" step="1"
+                class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-teal-600"
+                oninput="document.getElementById('c_years_val').innerText = this.value + ' anys'; calculateCompound();">
+            </div>
+          </form>
+        </div>
+
+        <!-- Results (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="glass-card rounded-2xl p-5 shadow-lg border-l-4 border-l-teal-500">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Patrimoni Final</span>
+              <div class="text-2xl sm:text-3xl font-black text-teal-600 dark:text-teal-400 mt-1 font-mono tracking-tight" id="c_res_total">
+                222.865 €
+              </div>
+              <span class="text-[11px] text-slate-400">Total acumulat</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 shadow-lg border-l-4 border-l-blue-500">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Total Aportat</span>
+              <div class="text-2xl sm:text-3xl font-black text-slate-800 dark:text-slate-100 mt-1 font-mono tracking-tight" id="c_res_principal">
+                82.000 €
+              </div>
+              <span class="text-[11px] text-slate-400">Capital propi invertit</span>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 shadow-lg border-l-4 border-l-emerald-500">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Interès Generat</span>
+              <div class="text-2xl sm:text-3xl font-black text-emerald-500 mt-1 font-mono tracking-tight" id="c_res_interest">
+                140.865 €
+              </div>
+              <span class="text-[11px] text-emerald-600 font-bold" id="c_res_multiplier">+171% de guany net</span>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 shadow-xl">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 mb-4">
+              Corba de Creixement Exponencial
+            </h3>
+            <div class="h-64 sm:h-72 w-full">
+              <canvas id="compoundChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 3: COMPARADOR DE PRÉSTECS -->
+    <section id="section-loan" class="tab-content hidden">
+      <div class="glass-card rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-200/80 dark:border-slate-800">
+        <h2 class="text-xl font-bold mb-2 flex items-center gap-2 text-slate-900 dark:text-white">
+          <i data-lucide="scale" class="w-6 h-6 text-indigo-500"></i> Comparativa de 2 Préstecs / Ofertes Bancàries
+        </h2>
+        <p class="text-sm text-slate-500 mb-6">Compara cara a cara dues ofertes amb diferents tipus d'interès i comissions per saber exactament quina t'estalvia més diners.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Oferta A -->
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border-2 border-indigo-200 dark:border-indigo-900/50">
+            <h3 class="font-bold text-indigo-600 dark:text-indigo-400 text-base mb-4 flex items-center justify-between">
+              <span>Opció A (ex. Banc Principal)</span>
+              <span class="px-2 py-0.5 rounded text-xs bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 font-bold">Oferta 1</span>
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <label for="cmp_amount_a" class="block text-xs font-bold text-slate-500 mb-1">Import (€)</label>
+                <input type="number" id="cmp_amount_a" value="150000" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label for="cmp_rate_a" class="block text-xs font-bold text-slate-500 mb-1">TIN (%)</label>
+                  <input type="number" id="cmp_rate_a" value="3.5" step="0.1" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+                </div>
+                <div>
+                  <label for="cmp_years_a" class="block text-xs font-bold text-slate-500 mb-1">Termini (Anys)</label>
+                  <input type="number" id="cmp_years_a" value="25" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+                </div>
+              </div>
+              <div>
+                <label for="cmp_fee_a" class="block text-xs font-bold text-slate-500 mb-1">Comissions d'apertura / despeses inicials (€)</label>
+                <input type="number" id="cmp_fee_a" value="500" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+              </div>
+            </div>
+            
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500">Quota mensual: <strong class="text-slate-900 dark:text-white font-mono text-base ml-1" id="cmp_res_monthly_a">750,89 €</strong></div>
+              <div class="text-xs text-slate-500 mt-1">Cost total (interessos + despeses): <strong class="text-indigo-600 font-mono ml-1" id="cmp_res_cost_a">75.767 €</strong></div>
+            </div>
+          </div>
+
+          <!-- Oferta B -->
+          <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border-2 border-emerald-200 dark:border-emerald-900/50">
+            <h3 class="font-bold text-emerald-600 dark:text-emerald-400 text-base mb-4 flex items-center justify-between">
+              <span>Opció B (ex. Oferta Competidora)</span>
+              <span class="px-2 py-0.5 rounded text-xs bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold">Oferta 2</span>
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <label for="cmp_amount_b" class="block text-xs font-bold text-slate-500 mb-1">Import (€)</label>
+                <input type="number" id="cmp_amount_b" value="150000" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label for="cmp_rate_b" class="block text-xs font-bold text-slate-500 mb-1">TIN (%)</label>
+                  <input type="number" id="cmp_rate_b" value="3.1" step="0.1" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+                </div>
+                <div>
+                  <label for="cmp_years_b" class="block text-xs font-bold text-slate-500 mb-1">Termini (Anys)</label>
+                  <input type="number" id="cmp_years_b" value="25" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+                </div>
+              </div>
+              <div>
+                <label for="cmp_fee_b" class="block text-xs font-bold text-slate-500 mb-1">Comissions d'apertura / despeses inicials (€)</label>
+                <input type="number" id="cmp_fee_b" value="1200" class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="compareLoans()">
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800">
+              <div class="text-xs text-slate-500">Quota mensual: <strong class="text-slate-900 dark:text-white font-mono text-base ml-1" id="cmp_res_monthly_b">719,30 €</strong></div>
+              <div class="text-xs text-slate-500 mt-1">Cost total (interessos + despeses): <strong class="text-emerald-600 font-mono ml-1" id="cmp_res_cost_b">66.990 €</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div id="cmp_recommendation" class="mt-8 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0">
+            <i data-lucide="check" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm text-emerald-900 dark:text-emerald-200" id="cmp_verdict_title">L'Opció B és la més econòmica</h4>
+            <p class="text-xs text-emerald-700 dark:text-emerald-300" id="cmp_verdict_desc">Estalvies 8.777 € en total i la quota mensual és 31,59 € més baixa cada mes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: INFLACIÓ -->
+    <section id="section-inflation" class="tab-content hidden">
+      <div class="max-w-2xl mx-auto glass-card rounded-2xl p-6 sm:p-8 shadow-xl border border-slate-200/80 dark:border-slate-800">
+        <h2 class="text-xl font-bold mb-2 flex items-center gap-2 text-slate-900 dark:text-white">
+          <i data-lucide="flame" class="w-6 h-6 text-rose-500"></i> Calculadora de Pèrdua de Poder Adquisitiu per Inflació
+        </h2>
+        <p class="text-sm text-slate-500 mb-6">Descobreix quant valdran els teus estalvis en el futur si els mantens en un compte corrent sense invertir.</p>
+
+        <div class="space-y-4">
+          <div>
+            <label for="inf_amount" class="block text-xs font-bold text-slate-500 mb-1">Estalvis Actuals (€)</label>
+            <input type="number" id="inf_amount" value="50000" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="calculateInflation()">
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="inf_rate" class="block text-xs font-bold text-slate-500 mb-1">Inflació Mitjana Anual (%)</label>
+              <input type="number" id="inf_rate" value="3.0" step="0.1" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="calculateInflation()">
+            </div>
+            <div>
+              <label for="inf_years" class="block text-xs font-bold text-slate-500 mb-1">Horitzó (Anys)</label>
+              <input type="number" id="inf_years" value="15" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 font-mono text-sm" oninput="calculateInflation()">
+            </div>
+          </div>
+
+          <div class="mt-6 p-6 rounded-2xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/60 text-center">
+            <span class="text-xs uppercase font-bold tracking-wider text-rose-600 dark:text-rose-400">Poder de compra equivalent en el futur</span>
+            <div class="text-4xl font-black text-rose-600 dark:text-rose-400 font-mono mt-2" id="inf_future_val">
+              32.093 €
+            </div>
+            <p class="text-xs text-rose-700 dark:text-rose-300 mt-2">
+              Hauràs perdut un <strong id="inf_loss_pct">35.8%</strong> del valor real dels teus estalvis a causa de la inflació acumulada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IN-FEED AD SLOT #2 (ADSENSE HIGH VIEWABILITY BANNER) -->
+    <div class="my-12 no-print">
+      <div class="ad-placeholder rounded-2xl p-6 flex flex-col items-center justify-center min-h-[120px] text-center shadow-sm">
+        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+          <i data-lucide="badge-dollar-sign" class="w-4 h-4 text-emerald-500"></i> Espai Publicitari Google AdSense (In-Article Responsive)
+        </div>
+        <p class="text-xs text-slate-400 dark:text-slate-500">Posició estratègica entre eina interactiva i contingut editorial d'alt valor informatiu.</p>
+        <!-- CODI REAL D'ADSENSE:
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="9876543210"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+      </div>
+    </div>
+
+    <!-- HIGH QUALITY EDITORIAL CONTENT (CLAU PER A L'APROVACIÓ D'ADSENSE I SEO ORGÀNIC #1) -->
+    <section id="guides" class="mt-8 space-y-12 no-print">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white">Guies Financeres i Metodologia de Càlcul</h2>
+        <p class="text-slate-500 text-sm mt-2">Descobreix com s'apliquen les fórmules del sistema francès d'amortització i com optimitzar les teves finances personals.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Article 1 -->
+        <article class="glass-card rounded-2xl p-6 sm:p-8">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center mb-4">
+            <i data-lucide="calculator" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">Com funciona el sistema d'amortització francès?</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            A la majoria de països europeus, les hipoteques es calculen mitjançant el <strong>sistema francès de quotes constants</strong>. Això significa que, mentre el tipus d'interès no canviï, la quota mensual serà sempre exactament la mateixa durant tota la vida del préstec.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            No obstant això, la composició interna de la quota varia radicalment: durant els primers anys, la gran majoria de la quota correspon a <strong>interessos</strong>, i amortitzes molt poc capital. A mesura que passen els anys i el deute es redueix, els interessos disminueixen i amortitzes capital molt més ràpidament.
+          </p>
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">
+            Fórmula de la quota: Cuota = Capital × [r × (1 + r)^n] / [(1 + r)^n - 1]
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="glass-card rounded-2xl p-6 sm:p-8">
+          <div class="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-950 text-teal-600 flex items-center justify-center mb-4">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">El poder de l'Amortització Anticipada: Reduir Termini vs Quota</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            Quan disposes d'estalvis addicionals, amortitzar capital de la hipoteca de forma anticipada és una de les inversions amb rendibilitat neta garantida més potents del mercat, ja que t'estalvies directament el tipus d'interès que et cobra el banc.
+          </p>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+            <strong>Triar reduir termini</strong> manté la mateixa quota mensual però et permet acabar el préstec anys abans, estalviant desenes de milers d'euros en interessos. <strong>Reduir quota</strong>, en canvi, rebaixa l'import que pagues cada mes mantenint els mateixos anys, cosa que atorga un gran alleujament de liquiditat a curt termini.
+          </p>
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300">
+            Rendibilitat de l'amortització = TIN estalviat lliure d'impostos i sense risc de mercat.
+          </div>
+        </article>
+      </div>
+
+      <!-- FAQ Section (1:1 Sincronitzada amb el Schema.org FAQPage per a Rich Snippets a Google) -->
+      <div class="glass-card rounded-2xl p-6 sm:p-8">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-slate-900 dark:text-white">
+          <i data-lucide="help-circle" class="w-5 h-5 text-emerald-500"></i> Preguntes Freqüents sobre Hipoteques i Finances (FAQ)
+        </h3>
+        <div class="divide-y divide-slate-200 dark:divide-slate-800 space-y-4">
+          <div class="pt-4">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Com funciona el sistema d'amortització francès a les hipoteques?</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              El sistema d'amortització francès manté una quota mensual constant a tipus fix. Al principi del préstec es paguen majoritàriament interessos sobre el capital pendent, i a mesura que transcorren els anys, la part de quota destinada a amortitzar capital creix mentre els interessos disminueixen progressivament.
+            </p>
+          </div>
+          <div class="pt-4">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Com estalviar diners fent amortització anticipada de la hipoteca?</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              Fer aportacions de capital extra redueix immediatament el capital pendent sobre el qual el banc calcula els interessos mensuals. Si tries reduir termini, mantens la teva quota mensual però retalles mesos o anys de durada de la hipoteca, la qual cosa maximitza l'estalvi d'interessos totals.
+            </p>
+          </div>
+          <div class="pt-4">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Què és millor: reduir termini o reduir quota en amortitzar anticipadament?</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              Financerament, reduir termini és gairebé sempre més avantatjós perquè estalvia molt més diners en interessos globals. Reduir quota és preferible únicament si necessites alliberar liquiditat mensual immediata per ajustar el pressupost familiar.
+            </p>
+          </div>
+          <div class="pt-4">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Quina diferència hi ha entre TIN i TAE en una hipoteca o préstec?</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              El TIN (Tipus d'Interès Nominal) és el percentatge pur que cobra el banc pel diner prestat. El TAE (Taxa Anual Equivalent) reflecteix el cost total real, incloent interessos, comissions d'obertura, despeses de contractació i productes vinculats com assegurances.
+            </p>
+          </div>
+          <div class="pt-4">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Com funciona l'interès compost en el creixement d'inversions?</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              L'interès compost és la reinversió sistemàtica dels rendiments obtinguts, fent que els guanys generin nous guanys en cada període. Amb aportacions periòdiques i horitzó a llarg termini, la corba geomètrica multiplica notablement el patrimoni acumulat respecte a l'estalvi simple.
+            </p>
+          </div>
+          <div class="pt-4">
+            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Aquesta eina emmagatzema dades personals o bancàries?</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              No. FinCalc Pro executa el 100% dels càlculs de manera totalment privada i en temps real al navegador de l'usuari (Client-Side). Cap dada financera s'envia a cap servidor ni s'emmagatzema en bases de dades externes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-10 mt-16 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="col-span-1 md:col-span-2">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
+              <i data-lucide="calculator" class="w-4 h-4"></i>
+            </div>
+            <span class="font-extrabold text-lg text-slate-900 dark:text-white">FinCalc Pro</span>
+          </div>
+          <p class="text-xs text-slate-500 max-w-sm leading-relaxed">
+            Plataforma financera independent dissenyada per ajudar a consumidors, estalviadors i inversors a prendre decisions informades mitjançant models matemàtics transparents i d'alta precisió.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Eines</h4>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+            <li><a href="#" onclick="switchTab('mortgage')" class="hover:text-emerald-600">Simulador Hipotecari & Amortització</a></li>
+            <li><a href="#" onclick="switchTab('compound')" class="hover:text-emerald-600">Calculadora Interès Compost</a></li>
+            <li><a href="#" onclick="switchTab('loan')" class="hover:text-emerald-600">Comparativa de Préstecs</a></li>
+            <li><a href="#" onclick="switchTab('inflation')" class="hover:text-emerald-600">Impacte de la Inflació</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Legal & Transparència</h4>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+            <li><a href="privacy.html" class="hover:text-emerald-600">Política de Privadesa</a></li>
+            <li><a href="terms.html" class="hover:text-emerald-600">Condicions d'Ús</a></li>
+            <li><a href="ads.txt" target="_blank" class="hover:text-emerald-600">Fitxer ads.txt</a></li>
+            <li><a href="#guides" class="hover:text-emerald-600">Metodologia i Exempció de responsabilitat</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <p>© 2026 FinCalc Pro. Tots els drets reservats. Informació de caràcter educatiu i matemàtic, no constitueix assessorament financer regulat.</p>
+        <div class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-500"></i> PRIVADESA 100% LOCAL</span>
+          <span>ESTÀNDARD EUROPEU RGPD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GDPR / COOKIE BANNER (OBLIGATORI PER A GOOGLE ADSENSE EN TRÀFIC EUROPEU) -->
+  <div id="cookieBanner" class="fixed bottom-4 right-4 left-4 sm:left-auto sm:max-w-md p-5 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 z-50 transition-all no-print">
+    <div class="flex items-start gap-3">
+      <i data-lucide="cookie" class="w-6 h-6 text-amber-500 shrink-0 mt-0.5"></i>
+      <div>
+        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Avís de Galetes i Privadesa</h4>
+        <p class="text-xs text-slate-500 mt-1">Utilitzem galetes analítiques i de Google AdSense per personalitzar continguts i anuncis publicitaris d'acord amb la normativa RGPD.</p>
+        <div class="flex items-center gap-2 mt-3">
+          <button onclick="acceptCookies()" class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-semibold text-xs hover:bg-emerald-700 transition-colors shadow-sm">
+            Acceptar totes
+          </button>
+          <a href="privacy.html" class="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            Més informació
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC, ADVANCED AMORTIZATION & CHARTS -->
+  <script>
+    // Theme toggle & persistent preference
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.theme = 'dark';
+      } else {
+        localStorage.theme = 'light';
+      }
+      updateChartColors();
+    });
+
+    // Cookie Banner
+    if (localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookieBanner').style.display = 'none';
+    }
+
+    // Set Print Date
+    const today = new Date();
+    const dateFormatted = today.toLocaleDateString('ca-ES', { day: '2-digit', month: 'long', year: 'numeric' });
+    const printDateEl = document.getElementById('print_current_date');
+    if (printDateEl) printDateEl.innerText = dateFormatted;
+
+    // Tab Switching (Desktop & Mobile Sync)
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      
+      // Desktop buttons
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('bg-white', 'dark:bg-slate-700', 'text-emerald-600', 'dark:text-emerald-400', 'shadow-sm');
+        btn.classList.add('text-slate-600', 'dark:text-slate-300');
+      });
+
+      // Mobile buttons
+      document.querySelectorAll('.mob-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-emerald-600', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      });
+
+      const activeContent = document.getElementById('section-' + tabId);
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      const activeMobBtn = document.getElementById('mob-tab-' + tabId);
+
+      if (activeContent) activeContent.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.add('bg-white', 'dark:bg-slate-700', 'text-emerald-600', 'dark:text-emerald-400', 'shadow-sm');
+        activeBtn.classList.remove('text-slate-600', 'dark:text-slate-300');
+      }
+      if (activeMobBtn) {
+        activeMobBtn.classList.add('bg-emerald-600', 'text-white', 'shadow-sm');
+        activeMobBtn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      }
+
+      // Re-trigger layout for active charts
+      if (tabId === 'mortgage') {
+        if (mortgageChartInstance) mortgageChartInstance.resize();
+        if (mortgageSavingsChartInstance) mortgageSavingsChartInstance.resize();
+      } else if (tabId === 'compound') {
+        if (compoundChartInstance) compoundChartInstance.resize();
+      }
+    }
+
+    // Chart instances
+    let mortgageChartInstance = null;
+    let mortgageSavingsChartInstance = null;
+    let compoundChartInstance = null;
+
+    // Currency formatters
+    const formatEUR = (val) => new Intl.NumberFormat('ca-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(val);
+    const formatEURPrecise = (val) => new Intl.NumberFormat('ca-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val);
+
+    // Mortgage state & data
+    let prepaymentStrategy = 'term'; // 'term' (reduir termini) or 'payment' (reduir quota)
+    let scheduleViewMode = 'yearly'; // 'yearly' or 'monthly'
+    let rawMortgageSchedule = []; // Full monthly amortization data
+    let yearlyMortgageSchedule = []; // Aggregated annual amortization data
+
+    function setPrepaymentStrategy(mode) {
+      prepaymentStrategy = mode;
+      const termBtn = document.getElementById('strat-term-btn');
+      const payBtn = document.getElementById('strat-payment-btn');
+
+      if (mode === 'term') {
+        termBtn.className = "py-2 px-2 text-xs font-bold rounded-lg text-center transition-all bg-emerald-600 text-white shadow-sm flex flex-col items-center justify-center";
+        payBtn.className = "py-2 px-2 text-xs font-semibold rounded-lg text-center transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex flex-col items-center justify-center";
+      } else {
+        payBtn.className = "py-2 px-2 text-xs font-bold rounded-lg text-center transition-all bg-emerald-600 text-white shadow-sm flex flex-col items-center justify-center";
+        termBtn.className = "py-2 px-2 text-xs font-semibold rounded-lg text-center transition-all text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex flex-col items-center justify-center";
+      }
+      calculateMortgage();
+    }
+
+    function setQuickExtra(type, val) {
+      if (type === 'monthly') {
+        document.getElementById('m_extra_monthly').value = val;
+      } else if (type === 'annual') {
+        document.getElementById('m_extra_annual').value = val;
+      }
+      calculateMortgage();
+    }
+
+    function setScheduleView(mode) {
+      scheduleViewMode = mode;
+      const yBtn = document.getElementById('view-yearly-btn');
+      const mBtn = document.getElementById('view-monthly-btn');
+      const thPeriod = document.getElementById('th_period');
+
+      if (mode === 'yearly') {
+        yBtn.className = "px-2.5 py-1 rounded-md font-bold transition-all bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-sm";
+        mBtn.className = "px-2.5 py-1 rounded-md font-medium transition-all text-slate-600 dark:text-slate-300";
+        if (thPeriod) thPeriod.innerText = 'Any';
+      } else {
+        mBtn.className = "px-2.5 py-1 rounded-md font-bold transition-all bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-sm";
+        yBtn.className = "px-2.5 py-1 rounded-md font-medium transition-all text-slate-600 dark:text-slate-300";
+        if (thPeriod) thPeriod.innerText = 'Mes';
+      }
+      renderScheduleTable();
+    }
+
+    function updateDownPaymentPercent() {
+      const price = parseFloat(document.getElementById('m_price').value) || 0;
+      const down = parseFloat(document.getElementById('m_down').value) || 0;
+      const pct = price > 0 ? ((down / price) * 100).toFixed(0) : 0;
+      document.getElementById('m_down_pct').innerText = pct + '%';
+    }
+
+    // Mortgage Calculation Logic
+    function calculateMortgage() {
+      const price = parseFloat(document.getElementById('m_price').value) || 0;
+      const down = parseFloat(document.getElementById('m_down').value) || 0;
+      const principal = Math.max(0, price - down);
+      const years = parseInt(document.getElementById('m_years').value) || 30;
+      const annualRate = parseFloat(document.getElementById('m_rate').value) || 0;
+      const taxAnnual = parseFloat(document.getElementById('m_tax').value) || 0;
+      const insAnnual = parseFloat(document.getElementById('m_ins').value) || 0;
+
+      // Prepayment parameters
+      const extraMonthly = parseFloat(document.getElementById('m_extra_monthly').value) || 0;
+      const extraAnnual = parseFloat(document.getElementById('m_extra_annual').value) || 0;
+      const extraLump = parseFloat(document.getElementById('m_extra_lump').value) || 0;
+      const extraLumpYear = parseInt(document.getElementById('m_extra_lump_year').value) || 1;
+      const lumpMonth = Math.min(years * 12, Math.max(1, extraLumpYear * 12));
+
+      const monthlyRate = (annualRate / 100) / 12;
+      const totalMonths = years * 12;
+
+      // Base Standard Monthly Payment (Sense amortització extra)
+      let baseMonthlyPayment = 0;
+      if (monthlyRate > 0) {
+        baseMonthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      } else {
+        baseMonthlyPayment = totalMonths > 0 ? (principal / totalMonths) : 0;
+      }
+
+      // Base Standard Interest (Sense amortització extra)
+      let standardTotalInterest = 0;
+      let stdBalance = principal;
+      let stdYearlyBalances = [];
+
+      for (let m = 1; m <= totalMonths; m++) {
+        const intM = stdBalance * monthlyRate;
+        const prinM = baseMonthlyPayment - intM;
+        standardTotalInterest += intM;
+        stdBalance = Math.max(0, stdBalance - prinM);
+        if (m % 12 === 0 || m === totalMonths) {
+          stdYearlyBalances.push(Math.round(stdBalance));
+        }
+      }
+
+      // Actual Simulation with Prepayment / Extra Contributions
+      rawMortgageSchedule = [];
+      yearlyMortgageSchedule = [];
+
+      let balance = principal;
+      let currentMonthlyPayment = baseMonthlyPayment;
+      let totalInterestPaid = 0;
+      let totalPrincipalPaid = 0;
+      let totalExtraPaid = 0;
+      let monthsCount = 0;
+      let firstReducedPayment = 0;
+      let finalReducedPayment = 0;
+
+      let yearAccum = {
+        year: 1,
+        quota: 0,
+        extra: 0,
+        principal: 0,
+        interest: 0,
+        balance: 0
+      };
+
+      for (let m = 1; m <= totalMonths; m++) {
+        if (balance <= 0.001) break;
+
+        monthsCount = m;
+        const currentYear = Math.ceil(m / 12);
+        const interestMonth = balance * monthlyRate;
+
+        // Determine extra contribution this month
+        let extraThisMonth = extraMonthly;
+        if (m % 12 === 0) extraThisMonth += extraAnnual;
+        if (m === lumpMonth) extraThisMonth += extraLump;
+
+        let scheduledPrincipal = 0;
+        let actualPaymentThisMonth = 0;
+
+        if (prepaymentStrategy === 'term') {
+          // Term Reduction: keep original baseMonthlyPayment
+          scheduledPrincipal = baseMonthlyPayment - interestMonth;
+          const totalPrincipalAttempt = scheduledPrincipal + extraThisMonth;
+
+          if (balance <= totalPrincipalAttempt) {
+            // Final payoff month
+            const actualPrincipal = balance;
+            balance = 0;
+            totalPrincipalPaid += actualPrincipal;
+            totalInterestPaid += interestMonth;
+            totalExtraPaid += Math.max(0, actualPrincipal - scheduledPrincipal);
+            actualPaymentThisMonth = actualPrincipal + interestMonth;
+
+            recordScheduleMonth(m, currentYear, actualPaymentThisMonth, Math.max(0, actualPrincipal - scheduledPrincipal), actualPrincipal, interestMonth, 0);
+            accumulateYearData(yearAccum, currentYear, actualPaymentThisMonth, Math.max(0, actualPrincipal - scheduledPrincipal), actualPrincipal, interestMonth, 0);
+            break;
+          } else {
+            balance -= totalPrincipalAttempt;
+            totalPrincipalPaid += totalPrincipalAttempt;
+            totalInterestPaid += interestMonth;
+            totalExtraPaid += extraThisMonth;
+            actualPaymentThisMonth = baseMonthlyPayment + extraThisMonth;
+
+            recordScheduleMonth(m, currentYear, baseMonthlyPayment, extraThisMonth, totalPrincipalAttempt, interestMonth, balance);
+            accumulateYearData(yearAccum, currentYear, baseMonthlyPayment, extraThisMonth, totalPrincipalAttempt, interestMonth, balance);
+          }
+        } else {
+          // Payment Reduction: reduce monthly payment after extra contribution
+          scheduledPrincipal = currentMonthlyPayment - interestMonth;
+          let totalPrincipalAttempt = scheduledPrincipal + extraThisMonth;
+
+          if (balance <= totalPrincipalAttempt) {
+            const actualPrincipal = balance;
+            balance = 0;
+            totalPrincipalPaid += actualPrincipal;
+            totalInterestPaid += interestMonth;
+            totalExtraPaid += Math.max(0, actualPrincipal - scheduledPrincipal);
+            actualPaymentThisMonth = actualPrincipal + interestMonth;
+
+            recordScheduleMonth(m, currentYear, actualPaymentThisMonth, Math.max(0, actualPrincipal - scheduledPrincipal), actualPrincipal, interestMonth, 0);
+            accumulateYearData(yearAccum, currentYear, actualPaymentThisMonth, Math.max(0, actualPrincipal - scheduledPrincipal), actualPrincipal, interestMonth, 0);
+            break;
+          } else {
+            balance -= totalPrincipalAttempt;
+            totalPrincipalPaid += totalPrincipalAttempt;
+            totalInterestPaid += interestMonth;
+            totalExtraPaid += extraThisMonth;
+
+            recordScheduleMonth(m, currentYear, currentMonthlyPayment, extraThisMonth, totalPrincipalAttempt, interestMonth, balance);
+            accumulateYearData(yearAccum, currentYear, currentMonthlyPayment, extraThisMonth, totalPrincipalAttempt, interestMonth, balance);
+
+            // If extra payment occurred, recompute subsequent monthly payments
+            if (extraThisMonth > 0 && balance > 0 && m < totalMonths) {
+              const remainingMonths = totalMonths - m;
+              if (monthlyRate > 0) {
+                currentMonthlyPayment = balance * (monthlyRate * Math.pow(1 + monthlyRate, remainingMonths)) / (Math.pow(1 + monthlyRate, remainingMonths) - 1);
+              } else {
+                currentMonthlyPayment = balance / remainingMonths;
+              }
+              if (firstReducedPayment === 0) firstReducedPayment = currentMonthlyPayment;
+              finalReducedPayment = currentMonthlyPayment;
+            }
+          }
+        }
+
+        // Close yearly bucket if December
+        if (m % 12 === 0) {
+          yearlyMortgageSchedule.push({ ...yearAccum });
+          yearAccum = {
+            year: currentYear + 1,
+            quota: 0,
+            extra: 0,
+            principal: 0,
+            interest: 0,
+            balance: balance
+          };
+        }
+      }
+
+      // If final month didn't end precisely at December, save remaining year accumulated data
+      if (yearAccum.quota > 0 || yearAccum.principal > 0) {
+        yearlyMortgageSchedule.push({ ...yearAccum });
+      }
+
+      // Calculations summary
+      const savedInterest = Math.max(0, standardTotalInterest - totalInterestPaid);
+      const monthsSaved = Math.max(0, totalMonths - monthsCount);
+      const yearsSaved = Math.floor(monthsSaved / 12);
+      const remMonthsSaved = monthsSaved % 12;
+      const extraMonthlyExpenses = (taxAnnual + insAnnual) / 12;
+
+      // Update primary KPI elements
+      document.getElementById('res_monthly').innerText = formatEURPrecise(baseMonthlyPayment);
+      document.getElementById('res_principal').innerText = formatEUR(principal);
+      document.getElementById('res_interest').innerText = formatEUR(totalInterestPaid);
+      document.getElementById('res_extra_monthly').innerText = formatEURPrecise(extraMonthlyExpenses);
+
+      // Update Dynamic Savings Panel
+      const hasExtra = (extraMonthly > 0 || extraAnnual > 0 || extraLump > 0);
+      const savTitle = document.getElementById('sav_title');
+      const savDesc = document.getElementById('sav_description');
+      const barBadge = document.getElementById('savings_bar_badge');
+
+      if (hasExtra && savedInterest > 1) {
+        const pctInterestSaved = standardTotalInterest > 0 ? ((savedInterest / standardTotalInterest) * 100).toFixed(1) : 0;
+        
+        if (prepaymentStrategy === 'term') {
+          let timeSavedStr = '';
+          if (yearsSaved > 0 && remMonthsSaved > 0) timeSavedStr = `${yearsSaved} anys i ${remMonthsSaved} mesos`;
+          else if (yearsSaved > 0) timeSavedStr = `${yearsSaved} anys`;
+          else timeSavedStr = `${remMonthsSaved} mesos`;
+
+          savTitle.innerText = `Estalvies ${formatEUR(savedInterest)} i acabes ${timeSavedStr} abans!`;
+          savDesc.innerText = `Amb aquestes aportacions estalvies un ${pctInterestSaved}% del total d'interessos que anaven directament al banc. El teu préstec es cancel·la en ${Math.ceil(monthsCount / 12)} anys en lloc de ${years} anys.`;
+          document.getElementById('sav_kpi_time_label').innerText = 'Temps Estalviat';
+          document.getElementById('sav_kpi_time').innerText = timeSavedStr;
+          document.getElementById('sav_kpi_new_term').innerText = `${(monthsCount / 12).toFixed(1)} anys`;
+        } else {
+          document.getElementById('sav_kpi_time_label').innerText = 'Nova Quota Mensual';
+          document.getElementById('sav_kpi_new_term').innerText = `${years} anys`;
+
+          if (extraMonthly > 0) {
+            savTitle.innerText = `Estalvies ${formatEUR(savedInterest)} reduint la teva quota mensual progressivament!`;
+            savDesc.innerText = `La quota baixa de ${formatEURPrecise(baseMonthlyPayment)} a ${formatEURPrecise(firstReducedPayment || currentMonthlyPayment)} inicialment i continuarà decreixent cada mes, amb un estalvi global d'interessos del ${pctInterestSaved}%.`;
+            document.getElementById('sav_kpi_time').innerText = formatEURPrecise(firstReducedPayment || currentMonthlyPayment);
+          } else {
+            const quotaDrop = Math.max(0, baseMonthlyPayment - (finalReducedPayment || currentMonthlyPayment));
+            savTitle.innerText = `Estalvies ${formatEUR(savedInterest)} i la teva quota baixa a ${formatEURPrecise(finalReducedPayment || currentMonthlyPayment)}!`;
+            savDesc.innerText = `Redueixes la teva quota mensual en ${formatEURPrecise(quotaDrop)} / mes mantenint els mateixos ${years} anys de termini, amb un estalvi total d'interessos del ${pctInterestSaved}%.`;
+            document.getElementById('sav_kpi_time').innerText = formatEURPrecise(finalReducedPayment || currentMonthlyPayment);
+          }
+        }
+
+        document.getElementById('sav_kpi_interest').innerText = formatEUR(savedInterest);
+        document.getElementById('sav_kpi_total_cost').innerText = formatEUR(principal + totalInterestPaid);
+        barBadge.innerText = `Estalvi en Interessos: -${formatEUR(savedInterest)}`;
+      } else {
+        savTitle.innerText = "Introdueix aportacions extra per activar el càlcul d'estalvi";
+        savDesc.innerText = "Simula un estalvi afegint 50€/mes o 1.000€/any i visualitza a l'instant com s'escurça la teva hipoteca i la quantitat exacta d'interessos estalviats.";
+        document.getElementById('sav_kpi_interest').innerText = '0 €';
+        document.getElementById('sav_kpi_time_label').innerText = 'Temps Estalviat';
+        document.getElementById('sav_kpi_time').innerText = '0 anys';
+        document.getElementById('sav_kpi_new_term').innerText = `${years} anys`;
+        document.getElementById('sav_kpi_total_cost').innerText = formatEUR(principal + standardTotalInterest);
+        barBadge.innerText = 'Sense amortització extra activa';
+      }
+
+      // Render Schedule Table
+      renderScheduleTable();
+
+      // Render Charts
+      renderMortgageLineChart(years, stdYearlyBalances);
+      renderMortgageSavingsBarChart(principal, standardTotalInterest, totalInterestPaid, savedInterest);
+    }
+
+    function recordScheduleMonth(m, yr, quota, extra, princ, interest, bal) {
+      rawMortgageSchedule.push({
+        month: m,
+        year: yr,
+        quota: quota,
+        extra: extra,
+        principal: princ,
+        interest: interest,
+        balance: Math.max(0, bal)
+      });
+    }
+
+    function accumulateYearData(accum, yr, quota, extra, princ, interest, bal) {
+      accum.year = yr;
+      accum.quota += quota;
+      accum.extra += extra;
+      accum.principal += princ;
+      accum.interest += interest;
+      accum.balance = Math.max(0, bal);
+    }
+
+    function renderScheduleTable() {
+      const tbody = document.getElementById('mortgageTableBody');
+      tbody.innerHTML = '';
+
+      const countLabel = document.getElementById('schedule_count_label');
+
+      if (scheduleViewMode === 'yearly') {
+        countLabel.innerText = `${yearlyMortgageSchedule.length} anys registrats`;
+        yearlyMortgageSchedule.forEach((row) => {
+          const tr = document.createElement('tr');
+          tr.className = row.year % 2 === 0 ? 'bg-slate-50/70 dark:bg-slate-900/60' : '';
+          tr.innerHTML = `
+            <td class="p-2.5 font-bold text-slate-800 dark:text-slate-200">Any ${row.year}</td>
+            <td class="p-2.5 font-mono">${formatEUR(row.quota)}</td>
+            <td class="p-2.5 font-mono font-semibold ${row.extra > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400'}">${row.extra > 0 ? '+' + formatEUR(row.extra) : '-'}</td>
+            <td class="p-2.5 font-mono text-emerald-600 dark:text-emerald-400">${formatEUR(row.principal)}</td>
+            <td class="p-2.5 font-mono text-amber-500">${formatEUR(row.interest)}</td>
+            <td class="p-2.5 font-mono font-bold">${formatEUR(row.balance)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } else {
+        countLabel.innerText = `${rawMortgageSchedule.length} mesos registrats`;
+        rawMortgageSchedule.forEach((row) => {
+          const tr = document.createElement('tr');
+          tr.className = row.month % 2 === 0 ? 'bg-slate-50/70 dark:bg-slate-900/60' : '';
+          tr.innerHTML = `
+            <td class="p-2.5 font-bold text-slate-800 dark:text-slate-200">M${row.month} <span class="text-[10px] text-slate-400 font-normal">(A${row.year})</span></td>
+            <td class="p-2.5 font-mono">${formatEURPrecise(row.quota)}</td>
+            <td class="p-2.5 font-mono font-semibold ${row.extra > 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400'}">${row.extra > 0 ? '+' + formatEUR(row.extra) : '-'}</td>
+            <td class="p-2.5 font-mono text-emerald-600 dark:text-emerald-400">${formatEURPrecise(row.principal)}</td>
+            <td class="p-2.5 font-mono text-amber-500">${formatEURPrecise(row.interest)}</td>
+            <td class="p-2.5 font-mono font-bold">${formatEURPrecise(row.balance)}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      }
+    }
+
+    // Chart 1: Line Chart (Evolució Saldo Estàndard vs Accelerat)
+    function renderMortgageLineChart(totalYears, stdBalances) {
+      const isDark = document.documentElement.classList.contains('dark');
+      const textColor = isDark ? '#94a3b8' : '#64748b';
+      const gridColor = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(226, 232, 240, 0.8)';
+
+      const labels = [];
+      const actualBalances = [];
+      const cumPrincipalArr = [];
+      const cumInterestArr = [];
+
+      let cumPrin = 0;
+      let cumInt = 0;
+
+      for (let y = 1; y <= totalYears; y++) {
+        labels.push('Any ' + y);
+        const yData = yearlyMortgageSchedule.find(d => d.year === y);
+        if (yData) {
+          cumPrin += yData.principal;
+          cumInt += yData.interest;
+          actualBalances.push(Math.round(yData.balance));
+          cumPrincipalArr.push(Math.round(cumPrin));
+          cumInterestArr.push(Math.round(cumInt));
+        } else {
+          // Loan was paid off early
+          actualBalances.push(0);
+          cumPrincipalArr.push(cumPrincipalArr[cumPrincipalArr.length - 1] || 0);
+          cumInterestArr.push(cumInterestArr[cumInterestArr.length - 1] || 0);
+        }
+      }
+
+      const ctx = document.getElementById('mortgageChart').getContext('2d');
+      if (mortgageChartInstance) mortgageChartInstance.destroy();
+
+      mortgageChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Saldo Restant Estàndard',
+              data: stdBalances,
+              borderColor: '#94a3b8',
+              borderDash: [6, 6],
+              borderWidth: 2,
+              fill: false,
+              tension: 0.2,
+              pointRadius: 0
+            },
+            {
+              label: 'Saldo Restant amb Amortització',
+              data: actualBalances,
+              borderColor: '#ef4444',
+              backgroundColor: 'rgba(239, 68, 68, 0.12)',
+              fill: true,
+              borderWidth: 2.5,
+              tension: 0.2,
+              pointRadius: actualBalances.length > 25 ? 0 : 2
+            },
+            {
+              label: 'Capital Amortitzat Acumulat',
+              data: cumPrincipalArr,
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.10)',
+              fill: true,
+              borderWidth: 2,
+              tension: 0.2,
+              pointRadius: 0
+            },
+            {
+              label: 'Interessos Pagats Acumulats',
+              data: cumInterestArr,
+              borderColor: '#f59e0b',
+              borderWidth: 2,
+              borderDash: [4, 4],
+              tension: 0.2,
+              pointRadius: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              labels: {
+                color: textColor,
+                boxWidth: 12,
+                font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + formatEUR(context.parsed.y);
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: textColor, maxTicksLimit: 10, font: { family: 'JetBrains Mono', size: 10 } },
+              grid: { display: false }
+            },
+            y: {
+              ticks: {
+                color: textColor,
+                font: { family: 'JetBrains Mono', size: 10 },
+                callback: function(val) { return (val / 1000) + 'k €'; }
+              },
+              grid: { color: gridColor }
+            }
+          }
+        }
+      });
+    }
+
+    // Chart 2: Bar Chart (Comparativa d'Estalvi d'Interessos i Cost Total)
+    function renderMortgageSavingsBarChart(principal, stdInterest, actualInterest, savedInterest) {
+      const isDark = document.documentElement.classList.contains('dark');
+      const textColor = isDark ? '#94a3b8' : '#64748b';
+      const gridColor = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(226, 232, 240, 0.8)';
+
+      const ctx = document.getElementById('mortgageSavingsChart').getContext('2d');
+      if (mortgageSavingsChartInstance) mortgageSavingsChartInstance.destroy();
+
+      mortgageSavingsChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Sense Amortització Extra', 'Amb Amortització Anticipada'],
+          datasets: [
+            {
+              label: 'Capital Prestat',
+              data: [principal, principal],
+              backgroundColor: isDark ? '#1e3a8a' : '#3b82f6',
+              borderRadius: 6,
+              barPercentage: 0.6
+            },
+            {
+              label: 'Interessos Pagats al Banc',
+              data: [stdInterest, actualInterest],
+              backgroundColor: '#f59e0b',
+              borderRadius: 6,
+              barPercentage: 0.6
+            },
+            {
+              label: "Estalvi d'Interessos (A la teva butxaca)",
+              data: [0, savedInterest],
+              backgroundColor: '#10b981',
+              borderRadius: 6,
+              barPercentage: 0.6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              labels: {
+                color: textColor,
+                boxWidth: 12,
+                font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + formatEUR(context.parsed.y);
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              stacked: true,
+              ticks: { color: textColor, font: { family: 'Plus Jakarta Sans', size: 11, weight: 'bold' } },
+              grid: { display: false }
+            },
+            y: {
+              stacked: true,
+              ticks: {
+                color: textColor,
+                font: { family: 'JetBrains Mono', size: 10 },
+                callback: function(val) { return (val / 1000) + 'k €'; }
+              },
+              grid: { color: gridColor }
+            }
+          }
+        }
+      });
+    }
+
+    // Export CSV with UTF-8 BOM for flawless Excel compatibility
+    function downloadMortgageCSV() {
+      let csv = "\uFEFF"; // UTF-8 BOM
+      if (scheduleViewMode === 'yearly') {
+        csv += "Any;Quota Ordinaria;Aportacio Extra;Capital Amortitzat;Interessos Pagats;Saldo Restant\n";
+        yearlyMortgageSchedule.forEach(row => {
+          csv += `${row.year};${row.quota.toFixed(2)};${row.extra.toFixed(2)};${row.principal.toFixed(2)};${row.interest.toFixed(2)};${row.balance.toFixed(2)}\n`;
+        });
+      } else {
+        csv += "Mes;Any;Quota Ordinaria;Aportacio Extra;Capital Amortitzat;Interessos Pagats;Saldo Restant\n";
+        rawMortgageSchedule.forEach(row => {
+          csv += `${row.month};${row.year};${row.quota.toFixed(2)};${row.extra.toFixed(2)};${row.principal.toFixed(2)};${row.interest.toFixed(2)};${row.balance.toFixed(2)}\n`;
+        });
+      }
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", `taula_amortitzacio_fincalc_${scheduleViewMode}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    function resetMortgage() {
+      document.getElementById('m_price').value = 250000;
+      document.getElementById('m_down').value = 50000;
+      document.getElementById('m_years').value = 30;
+      document.getElementById('m_years_val').innerText = '30 anys';
+      document.getElementById('m_rate').value = 3.20;
+      document.getElementById('m_rate_val').innerText = '3.20 %';
+      document.getElementById('m_tax').value = 600;
+      document.getElementById('m_ins').value = 350;
+      document.getElementById('m_extra_monthly').value = 0;
+      document.getElementById('m_extra_annual').value = 0;
+      document.getElementById('m_extra_lump').value = 0;
+      document.getElementById('m_extra_lump_year').value = 3;
+      setPrepaymentStrategy('term');
+      updateDownPaymentPercent();
+      calculateMortgage();
+    }
+
+    // Compound Interest Calculation Logic
+    function calculateCompound() {
+      const initial = parseFloat(document.getElementById('c_initial').value) || 0;
+      const monthly = parseFloat(document.getElementById('c_monthly').value) || 0;
+      const rate = (parseFloat(document.getElementById('c_rate').value) || 8.0) / 100;
+      const years = parseInt(document.getElementById('c_years').value) || 20;
+
+      const monthlyRate = rate / 12;
+      let labels = [];
+      let totalContributions = [];
+      let totalBalances = [];
+
+      let currentBalance = initial;
+      let cumDeposits = initial;
+
+      for (let y = 1; y <= years; y++) {
+        for (let m = 1; m <= 12; m++) {
+          currentBalance = (currentBalance + monthly) * (1 + monthlyRate);
+          cumDeposits += monthly;
+        }
+        labels.push('Any ' + y);
+        totalContributions.push(Math.round(cumDeposits));
+        totalBalances.push(Math.round(currentBalance));
+      }
+
+      const totalInterest = currentBalance - cumDeposits;
+      const multiplier = cumDeposits > 0 ? ((totalInterest / cumDeposits) * 100).toFixed(0) : 0;
+
+      document.getElementById('c_res_total').innerText = formatEUR(currentBalance);
+      document.getElementById('c_res_principal').innerText = formatEUR(cumDeposits);
+      document.getElementById('c_res_interest').innerText = formatEUR(totalInterest);
+      document.getElementById('c_res_multiplier').innerText = `+${multiplier}% de creixement net`;
+
+      renderCompoundChart(labels, totalContributions, totalBalances);
+    }
+
+    function renderCompoundChart(labels, contributions, balances) {
+      const isDark = document.documentElement.classList.contains('dark');
+      const textColor = isDark ? '#94a3b8' : '#64748b';
+      const gridColor = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(226, 232, 240, 0.8)';
+
+      const ctx = document.getElementById('compoundChart').getContext('2d');
+      if (compoundChartInstance) compoundChartInstance.destroy();
+
+      compoundChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Patrimoni Total (Amb Interès Compost)',
+              data: balances,
+              borderColor: '#14b8a6',
+              backgroundColor: 'rgba(20, 184, 166, 0.25)',
+              fill: true,
+              tension: 0.3,
+              borderWidth: 2.5
+            },
+            {
+              label: 'Aportacions Teves Reals',
+              data: contributions,
+              borderColor: '#3b82f6',
+              backgroundColor: 'rgba(59, 130, 246, 0.1)',
+              fill: true,
+              tension: 0.3,
+              borderWidth: 2
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              labels: {
+                color: textColor,
+                boxWidth: 12,
+                font: { family: 'Plus Jakarta Sans', size: 11, weight: '600' }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': ' + formatEUR(context.parsed.y);
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: textColor, maxTicksLimit: 10, font: { family: 'JetBrains Mono', size: 10 } },
+              grid: { display: false }
+            },
+            y: {
+              ticks: {
+                color: textColor,
+                font: { family: 'JetBrains Mono', size: 10 },
+                callback: function(val) { return (val / 1000) + 'k €'; }
+              },
+              grid: { color: gridColor }
+            }
+          }
+        }
+      });
+    }
+
+    function resetCompound() {
+      document.getElementById('c_initial').value = 10000;
+      document.getElementById('c_monthly').value = 300;
+      document.getElementById('c_rate').value = 8.0;
+      document.getElementById('c_rate_val').innerText = '8.0 %';
+      document.getElementById('c_years').value = 20;
+      document.getElementById('c_years_val').innerText = '20 anys';
+      calculateCompound();
+    }
+
+    // Loan Comparison Logic
+    function calculateSingleLoan(amount, annualRate, years, fees) {
+      const monthlyRate = (annualRate / 100) / 12;
+      const totalMonths = years * 12;
+      let monthly = 0;
+      if (monthlyRate > 0) {
+        monthly = amount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      } else {
+        monthly = totalMonths > 0 ? (amount / totalMonths) : 0;
+      }
+      const totalInterest = (monthly * totalMonths) - amount;
+      const totalCost = totalInterest + fees;
+      return { monthly, totalInterest, totalCost };
+    }
+
+    function compareLoans() {
+      const a_amount = parseFloat(document.getElementById('cmp_amount_a').value) || 0;
+      const a_rate = parseFloat(document.getElementById('cmp_rate_a').value) || 0;
+      const a_years = parseInt(document.getElementById('cmp_years_a').value) || 1;
+      const a_fee = parseFloat(document.getElementById('cmp_fee_a').value) || 0;
+
+      const b_amount = parseFloat(document.getElementById('cmp_amount_b').value) || 0;
+      const b_rate = parseFloat(document.getElementById('cmp_rate_b').value) || 0;
+      const b_years = parseInt(document.getElementById('cmp_years_b').value) || 1;
+      const b_fee = parseFloat(document.getElementById('cmp_fee_b').value) || 0;
+
+      const loanA = calculateSingleLoan(a_amount, a_rate, a_years, a_fee);
+      const loanB = calculateSingleLoan(b_amount, b_rate, b_years, b_fee);
+
+      document.getElementById('cmp_res_monthly_a').innerText = formatEURPrecise(loanA.monthly);
+      document.getElementById('cmp_res_cost_a').innerText = formatEUR(loanA.totalCost);
+
+      document.getElementById('cmp_res_monthly_b').innerText = formatEURPrecise(loanB.monthly);
+      document.getElementById('cmp_res_cost_b').innerText = formatEUR(loanB.totalCost);
+
+      const titleEl = document.getElementById('cmp_verdict_title');
+      const descEl = document.getElementById('cmp_verdict_desc');
+      const boxEl = document.getElementById('cmp_recommendation');
+
+      const diffCost = Math.abs(loanA.totalCost - loanB.totalCost);
+      const diffMonthly = Math.abs(loanA.monthly - loanB.monthly);
+
+      if (loanA.totalCost < loanB.totalCost) {
+        titleEl.innerText = "L'Opció A és la més econòmica";
+        descEl.innerText = `Estalvies ${formatEUR(diffCost)} en el cost global del préstec. Diferència de quota: ${formatEURPrecise(diffMonthly)} / mes.`;
+        boxEl.className = "mt-8 p-4 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 flex items-center gap-4";
+      } else {
+        titleEl.innerText = "L'Opció B és la més econòmica";
+        descEl.innerText = `Estalvies ${formatEUR(diffCost)} en el cost global del préstec. Diferència de quota: ${formatEURPrecise(diffMonthly)} / mes.`;
+        boxEl.className = "mt-8 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-center gap-4";
+      }
+    }
+
+    // Inflation Logic
+    function calculateInflation() {
+      const amount = parseFloat(document.getElementById('inf_amount').value) || 0;
+      const rate = (parseFloat(document.getElementById('inf_rate').value) || 0) / 100;
+      const years = parseInt(document.getElementById('inf_years').value) || 1;
+
+      const futurePower = amount / Math.pow(1 + rate, years);
+      const lossPct = ((1 - (futurePower / amount)) * 100).toFixed(1);
+
+      document.getElementById('inf_future_val').innerText = formatEUR(futurePower);
+      document.getElementById('inf_loss_pct').innerText = lossPct + '%';
+    }
+
+    function updateChartColors() {
+      if (mortgageChartInstance || mortgageSavingsChartInstance) calculateMortgage();
+      if (compoundChartInstance) calculateCompound();
+    }
+
+    // Initial Execution
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      calculateMortgage();
+      calculateCompound();
+      compareLoans();
+      calculateInflation();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Fitxer de verificació ads.txt de Google AdSense
+# Substitueix 'pub-XXXXXXXXXXXXXXXX' pel teu identificador d'editor d'AdSense (ho trobes a la cantonada superior del teu panell d'AdSense)
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
